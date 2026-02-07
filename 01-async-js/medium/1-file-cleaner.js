@@ -11,3 +11,16 @@
 // ```
 // hello world my name is raman
 // ```
+
+const fs = require("fs");
+
+function writeCallback(){
+    console.log("File has been writen");
+}
+
+function readCallBack(err, data){
+    const cleanData = data.replace(/\s+/g, " ").trim();
+    fs.writeFile("neFile.txt", cleanData, writeCallback);
+}
+
+fs.readFile("file.txt", "utf-8", readCallBack);
