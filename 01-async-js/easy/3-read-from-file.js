@@ -8,7 +8,11 @@
 const fs = require('fs')
 
 function readeFile(error, data) {
-    console.log(data);
+    if(error){
+        console.log(error);
+    }else{
+        console.log(data);
+    }
 }
 
 fs.readFile("read.txt", "utf-8", readeFile);
